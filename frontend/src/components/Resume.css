@@ -13,101 +13,116 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
-    max-width: 800px;
+    gap: 4rem;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-.resume-preview {
-    position: relative;
+.resume-preview-container {
     width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1 / 1.414;
-    /* A4 Ratio */
+    max-width: 800px;
+    perspective: 1000px;
+}
+
+.resume-window {
     background: var(--bg-color);
-    box-shadow: var(--shadow-md);
-    border-radius: 0.5rem;
-    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
 }
 
-.resume-paper {
-    width: 100%;
-    height: 100%;
-    background: white;
-    /* Always white paper */
-    position: relative;
-    border: 1px solid #eee;
+.resume-window:hover {
+    transform: translateY(-5px);
 }
 
-/* Skeleton lines for "paper" feel */
-.line {
-    height: 8px;
-    background: #e5e7eb;
-    margin-bottom: 8px;
-    border-radius: 4px;
-}
-
-.line.long {
-    width: 90%;
-}
-
-.line.medium {
-    width: 60%;
-}
-
-.line.short {
-    width: 30%;
-}
-
-.margin-top {
-    margin-top: 2rem;
-}
-
-.paper-header {
-    height: 60px;
-    background: #f3f4f6;
-    margin-bottom: 2rem;
-}
-
-.paper-body {
-    padding: 1rem;
-}
-
-.resume-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.05);
+.window-header {
+    background: var(--hover-bg);
+    padding: 0.75rem 1.5rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    color: #6b7280;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.resume-preview:hover .resume-overlay {
-    background: rgba(0, 0, 0, 0.1);
-    color: var(--primary-color);
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.window-dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.window-dots span:nth-child(1) {
+    background: #ff5f56;
+}
+
+.window-dots span:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.window-dots span:nth-child(3) {
+    background: #27c93f;
+}
+
+.window-title {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-family: monospace;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.resume-viewer {
+    height: 600px;
+    position: relative;
+    background: #525659;
+    /* Default PDF viewer dark background */
+}
+
+.viewer-overlay {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.resume-viewer:hover .viewer-overlay {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .resume-actions {
     text-align: center;
+    max-width: 600px;
 }
 
 .resume-actions p {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
 }
 
 .btn-lg {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .resume-viewer {
+        height: 400px;
+    }
+
+    .resume-preview-container {
+        padding: 0 1rem;
+    }
 }

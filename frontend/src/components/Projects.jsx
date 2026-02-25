@@ -21,13 +21,6 @@ const Projects = () => {
             demo: '#'
         },
         {
-            title: 'AI-Integrated Spring Boot Backend',
-            description: 'A conceptual project aimed at bridging Java backends with LLMs. Focusing on automated data processing and intelligent response generation using Gemini API.',
-            tech: ['Java', 'Spring Boot', 'Gemini AI', 'MySQL'],
-            github: '#',
-            demo: '#'
-        },
-        {
             title: 'React Mini Projects',
             description: 'A collection of small interactive applications including a Todo List, Weather App, and Calculator to demonstrate core React concepts.',
             tech: ['React', 'CSS', 'API Integration'],

@@ -5,7 +5,7 @@ import { FileDown, Mail, Github, Linkedin, ChevronRight } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
-    const roles = ["Full Stack Developer", "Spring Boot Developer", "AI Enthusiast", "AI & Spring Boot Integration"];
+    const roles = ["Full Stack Developer", "Spring Boot Developer", "Java Developer", "Software Engineer"];
     const [currentRole, setCurrentRole] = useState(0);
 
     useEffect(() => {
@@ -78,7 +78,7 @@ const Hero = () => {
                         <a href="#contact" className="btn btn-primary">
                             Contact Me <Mail size={18} />
                         </a>
-                        <a href="/resume.pdf" download className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                        <a href="/vijay_java_full_stack.pdf" download className="btn btn-outline" target="_blank" rel="noopener noreferrer">
                             Download Resume <FileDown size={18} />
                         </a>
                     </motion.div>
@@ -131,7 +131,7 @@ const Hero = () => {
                             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
                             className="floating-badge badge-4"
                         >
-                            <span>AI Integration</span>
+                            <span>SQL</span>
                         </motion.div>
                     </div>
                 </motion.div>
