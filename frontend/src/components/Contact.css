@@ -1,0 +1,135 @@
+.contact-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.contact-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.info-icon {
+    color: var(--primary-color);
+    margin-top: 3px;
+}
+
+.info-item h4 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.info-item a,
+.info-item p {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+.info-item a:hover {
+    color: var(--primary-color);
+}
+
+.info-socials h4 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.social-links-contact {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links-contact a {
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    padding: 0.5rem;
+    background: var(--card-bg);
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+}
+
+.social-links-contact a:hover {
+    color: var(--primary-color);
+    background: var(--hover-bg);
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+}
+
+.contact-form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-section {
+        padding: 3rem 0;
+    }
+}
