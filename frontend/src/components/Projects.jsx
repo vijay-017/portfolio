@@ -10,8 +10,8 @@ const Projects = () => {
             title: 'Bank Management System',
             description: 'A comprehensive system to manage bank accounts, deposits, withdrawals, and transactions. Features include user authentication, transaction history, and account management.',
             tech: ['React', 'Spring Boot', 'MySQL'],
-            github: '#',
-            demo: '#'
+            github: 'https://github.com/vijay-017/bank-application',
+            demo: 'https://bank-application-u3ig.vercel.app/'
         },
         {
             title: 'Challenge Tracker App',
@@ -21,8 +21,15 @@ const Projects = () => {
             demo: '#'
         },
         {
+            title: 'AI-Integrated Spring Boot Backend',
+            description: 'A conceptual project aimed at bridging Java backends with LLMs. Focusing on automated data processing and intelligent response generation using Gemini API.',
+            tech: ['Java', 'Spring Boot', 'Gemini AI', 'MySQL'],
+            github: '#',
+            demo: '#'
+        },
+        {
             title: 'React Mini Projects',
-            description: 'A collection of small interactive applications including a Todo List, Weather App, and Calculator to demonstrate core React concepts like state management and hooks.',
+            description: 'A collection of small interactive applications including a Todo List, Weather App, and Calculator to demonstrate core React concepts.',
             tech: ['React', 'CSS', 'API Integration'],
             github: '#',
             demo: '#'

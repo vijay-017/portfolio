@@ -31,7 +31,7 @@ const Navigation = ({ theme, toggleTheme }) => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <a href="#home" className="logo">
-          &lt;Dev<span className="accent">Portfolio</span>/&gt;
+          &lt;<span className="accent">Portfolio</span>/&gt;
         </a>
 
         {/* Desktop Menu */}

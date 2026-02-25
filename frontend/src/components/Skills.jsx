@@ -55,6 +55,7 @@ const Skills = () => {
             icon: Server,
             skills: [
                 { name: 'Java', level: 80 },
+                { name: 'Spring Boot', level: 75 },
                 { name: 'SQL', level: 75 },
             ]
         },
@@ -64,15 +65,16 @@ const Skills = () => {
             skills: [
                 { name: 'Git & GitHub', level: 80 },
                 { name: 'VS Code', level: 90 },
-                { name: 'Postman', level: 70 },
-                { name: 'Eclipse', level:70}
+                { name: 'Postman', level: 75 },
+                { name: 'Eclipse', level: 70 }
             ]
         },
         {
-            title: 'Learning',
+            title: 'Aspirations',
             icon: BookOpen,
             skills: [
-                { name: 'Spring Boot', level: 40 },
+                { name: 'AI Integration (Gemini/OpenAI)', level: 40 },
+                { name: 'Microservices', level: 30 },
             ]
         }
     ];

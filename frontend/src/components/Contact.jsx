@@ -9,13 +9,46 @@ const Contact = () => {
         email: '',
         message: ''
     });
+    const [status, setStatus] = useState({
+        submitting: false,
+        submitted: false,
+        error: null
+    });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Simulate form submission
-        console.log('Form submitted:', formData);
-        alert('Message sent! (Demo only)');
-        setFormData({ name: '', email: '', message: '' });
+        setStatus({ submitting: true, submitted: false, error: null });
+
+        try {
+            // Replace 'YOUR_ACCESS_KEY_HERE' with your actual Web3Forms access key
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: 'YOUR_ACCESS_KEY_HERE',
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    subject: `New Contact Form Submission from ${formData.name}`
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setStatus({ submitting: false, submitted: true, error: null });
+                setFormData({ name: '', email: '', message: '' });
+                // Reset success message after 5 seconds
+                setTimeout(() => setStatus(prev => ({ ...prev, submitted: false })), 5000);
+            } else {
+                throw new Error(result.message || 'Something went wrong');
+            }
+        } catch (err) {
+            setStatus({ submitting: false, submitted: false, error: err.message });
+        }
     };
 
     const handleChange = (e) => {
@@ -57,8 +90,8 @@ const Contact = () => {
                         <div className="info-socials">
                             <h4>Follow Me</h4>
                             <div className="social-links-contact">
-                                <a href="#" aria-label="Github"><Github size={24} /></a>
-                                <a href="#" aria-label="LinkedIn"><Linkedin size={24} /></a>
+                                <a href="https://github.com/vijay-017" target="_blank" rel="noopener noreferrer" aria-label="Github"><Github size={24} /></a>
+                                <a href="https://www.linkedin.com/in/vijaysankarkambala/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={24} /></a>
                             </div>
                         </div>
                     </div>
@@ -74,6 +107,7 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder="Your Name"
+                                disabled={status.submitting}
                             />
                         </div>
                         <div className="form-group">
@@ -86,6 +120,7 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 placeholder="your@email.com"
+                                disabled={status.submitting}
                             />
                         </div>
                         <div className="form-group">
@@ -98,10 +133,24 @@ const Contact = () => {
                                 required
                                 placeholder="What's on your mind?"
                                 rows="5"
+                                disabled={status.submitting}
                             ></textarea>
                         </div>
-                        <button type="submit" className="btn btn-primary submit-btn">
-                            Send Message <Send size={18} />
+
+                        {status.error && (
+                            <div className="form-status error">{status.error}</div>
+                        )}
+
+                        {status.submitted && (
+                            <div className="form-status success">Message sent successfully! I'll get back to you soon.</div>
+                        )}
+
+                        <button
+                            type="submit"
+                            className={`btn btn-primary submit-btn ${status.submitting ? 'loading' : ''}`}
+                            disabled={status.submitting}
+                        >
+                            {status.submitting ? 'Sending...' : 'Send Message'} <Send size={18} />
                         </button>
                     </form>
                 </div>
