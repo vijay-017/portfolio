@@ -78,7 +78,7 @@ const Hero = () => {
                         <a href="#contact" className="btn btn-primary">
                             Contact Me <Mail size={18} />
                         </a>
-                        <a href="/vijay_java_full_stack.pdf" download className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                        <a href="/new-Mar-27.pdf" download className="btn btn-outline" target="_blank" rel="noopener noreferrer">
                             Download Resume <FileDown size={18} />
                         </a>
                     </motion.div>

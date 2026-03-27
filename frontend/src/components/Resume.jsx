@@ -5,7 +5,7 @@ import { Download, FileText, ExternalLink } from 'lucide-react';
 import './Resume.css';
 
 const Resume = () => {
-    const resumePath = "/vijay_java_full_stack.pdf";
+    const resumePath = "/new-Mar-27.pdf";
 
     return (
         <section id="resume" className="resume-section">
@@ -27,7 +27,7 @@ const Resume = () => {
                                     <span></span>
                                     <span></span>
                                 </div>
-                                <span className="window-title">vijay_resume.pdf</span>
+                                <span className="window-title">new-Mar-27.pdf</span>
                             </div>
                             <div className="resume-viewer">
                                 <iframe
