@@ -24,6 +24,7 @@ const Navigation = ({ theme, toggleTheme }) => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -31,7 +32,7 @@ const Navigation = ({ theme, toggleTheme }) => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <a href="#home" className="logo">
-          &lt;<span className="accent">vijay</span>/&gt;
+          &lt;<span className="accent">V!JAY</span>/&gt;
         </a>
 
         {/* Desktop Menu */}

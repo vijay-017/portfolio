@@ -20,7 +20,6 @@ const Contact = () => {
         setStatus({ submitting: true, submitted: false, error: null });
 
         try {
-            // Replace 'YOUR_ACCESS_KEY_HERE' with your actual Web3Forms access key
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
@@ -28,10 +27,11 @@ const Contact = () => {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    access_key: 'YOUR_ACCESS_KEY_HERE',
+                    access_key: '283894ff-b30c-4bdf-bd20-d2823fa0ce23',
                     name: formData.name,
                     email: formData.email,
                     message: formData.message,
+                    replyto: formData.email,
                     subject: `New Contact Form Submission from ${formData.name}`
                 })
             });

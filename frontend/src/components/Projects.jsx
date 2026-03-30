@@ -7,7 +7,7 @@ import './Projects.css';
 const Projects = () => {
     const projects = [
         {
-            title: 'Bank Management System',
+            title: 'Digital Banking System',
             description: 'A comprehensive system to manage bank accounts, deposits, withdrawals, and transactions. Features include user authentication, transaction history, and account management.',
             tech: ['React', 'Spring Boot', 'MySQL'],
             github: 'https://github.com/vijay-017/bank-application',
